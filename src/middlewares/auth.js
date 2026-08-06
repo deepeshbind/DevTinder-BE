@@ -1,0 +1,14 @@
+const adminAuth = (req, res, next) => {
+    console.log("admin auth is geting checked");
+    const token = "xyz";
+    const isAdminAuthorized = token === "xyz";
+    if(!isAdminAuthorized) {
+       res.status(401).send("unAuthorized request") 
+    } else {
+        next();
+    } 
+};
+
+module.exports ={
+    adminAuth
+}
